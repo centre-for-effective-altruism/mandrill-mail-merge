@@ -1,5 +1,5 @@
 // FROM
-const from = 'test@example.com'
+const fromEmail = 'test@example.com'
 const fromName = 'Test Sender'
 
 // TO

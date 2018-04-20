@@ -1,7 +1,6 @@
 import {Command, flags} from '@oclif/command'
-import * as inquirer from 'inquirer'
-import * as path from 'path'
 import {fs} from 'mz'
+import * as path from 'path'
 
 const TEMPLATE_FILE_PATH = path.join(__dirname, '..', 'generator', 'template.js')
 

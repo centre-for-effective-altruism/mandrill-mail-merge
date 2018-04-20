@@ -9,7 +9,7 @@ import * as path from 'path'
 type RowFormatter = (row: object) => string
 
 interface Template {
-  from: string,
+  fromEmail: string,
   fromName: string,
   to: RowFormatter,
   toName: RowFormatter,
@@ -18,7 +18,7 @@ interface Template {
 }
 
 interface MandrillMessage {
-  from: string,
+  from_email: string,
   from_name?: string,
   to: Array<{
     email: string,
@@ -37,7 +37,7 @@ export default class Run extends Command {
   Mail merge requires a CSV of merge data, and a matching Javascript template file that exports the following keys:
     {
       // -- the sender's email address
-      from: string,
+      fromEmail: string,
 
       // -- the sender's name
       fromName: string,
@@ -142,13 +142,13 @@ export default class Run extends Command {
 
 function getMessage(row: object, template: Template): MandrillMessage {
   // validate
-  if (!template.from || typeof template.from !== 'string') throw new Error(`Template does not export a string 'from'`)
+  if (!template.fromEmail || typeof template.fromEmail !== 'string') throw new Error(`Template does not export a string 'fromEmail'`)
   if (!template.to || typeof template.to !== 'function') throw new Error(`Template must export variable 'to' as a function`)
   if (!template.subject) throw new Error(`Template must export variable 'subject' as a string or function`)
   if (!template.message || typeof template.message !== 'function') throw new Error(`Template must export variable 'message' as a function`)
   // build message
   const message: MandrillMessage = {
-    from: template.from,
+    from_email: template.fromEmail,
     to: [{
       email: template.to(row)
     }],
@@ -169,7 +169,7 @@ function getPreview(message: MandrillMessage): string {
   output.push('Message:')
   output.push((`
 ================
-from: ${message.from_name ? `${message.from_name} <${message.from}>` : message.from }
+from: ${message.from_name ? `${message.from_name} <${message.from_email}>` : message.from_email }
 to: ${to.name ? `${to.name} <${to.email}>` : to.email }
 subject: ${message.subject}
 ----------------
