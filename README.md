@@ -21,7 +21,7 @@ $ npm install -g mandrill-mail-merge
 $ mmerge COMMAND
 running command...
 $ mmerge (-v|--version|version)
-mandrill-mail-merge/0.2.1 darwin-x64 node-v8.11.1
+mandrill-mail-merge/0.2.2 darwin-x64 node-v8.10.0
 $ mmerge --help [COMMAND]
 USAGE
   $ mmerge COMMAND
@@ -48,7 +48,7 @@ OPTIONS
   -h, --help               show CLI help
 ```
 
-_See code: [src/commands/generate.ts](https://github.com/centre-for-effective-altruism/mandrill-mail-merge/blob/v0.2.1/src/commands/generate.ts)_
+_See code: [src/commands/generate.ts](https://github.com/centre-for-effective-altruism/mandrill-mail-merge/blob/v0.2.2/src/commands/generate.ts)_
 
 ## `mmerge help [COMMAND]`
 
@@ -91,7 +91,7 @@ DESCRIPTION
      Mail merge requires a CSV of merge data, and a matching Javascript template file that exports the following keys:
        {
          // -- the sender's email address
-         from: string,
+         fromEmail: string,
 
          // -- the sender's name
          fromName: string,
@@ -112,7 +112,7 @@ DESCRIPTION
       Note that CSV column headers will be converted to camelCase
 ```
 
-_See code: [src/commands/run.ts](https://github.com/centre-for-effective-altruism/mandrill-mail-merge/blob/v0.2.1/src/commands/run.ts)_
+_See code: [src/commands/run.ts](https://github.com/centre-for-effective-altruism/mandrill-mail-merge/blob/v0.2.2/src/commands/run.ts)_
 
 ## `mmerge setconfig`
 
@@ -126,5 +126,5 @@ OPTIONS
   -h, --help  show CLI help
 ```
 
-_See code: [src/commands/setconfig.ts](https://github.com/centre-for-effective-altruism/mandrill-mail-merge/blob/v0.2.1/src/commands/setconfig.ts)_
+_See code: [src/commands/setconfig.ts](https://github.com/centre-for-effective-altruism/mandrill-mail-merge/blob/v0.2.2/src/commands/setconfig.ts)_
 <!-- commandsstop -->
