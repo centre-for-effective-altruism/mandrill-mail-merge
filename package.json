@@ -1,7 +1,7 @@
 {
   "name": "mandrill-mail-merge",
   "description": "Send a mail merge using your Mandrill account",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "author": " @colophonemes",
   "bin": {
     "mmerge": "./bin/run"
