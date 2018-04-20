@@ -21,7 +21,7 @@ $ npm install -g mandrill-mail-merge
 $ mmerge COMMAND
 running command...
 $ mmerge (-v|--version|version)
-mandrill-mail-merge/0.1.0 darwin-x64 node-v8.10.0
+mandrill-mail-merge/0.2.0 darwin-x64 node-v8.10.0
 $ mmerge --help [COMMAND]
 USAGE
   $ mmerge COMMAND
@@ -30,9 +30,25 @@ USAGE
 <!-- usagestop -->
 # Commands
 <!-- commands -->
+* [`mmerge generate`](#mmerge-generate)
 * [`mmerge help [COMMAND]`](#mmerge-help-command)
 * [`mmerge run`](#mmerge-run)
 * [`mmerge setconfig`](#mmerge-setconfig)
+
+## `mmerge generate`
+
+generate a new mail merge template in the current working directory
+
+```
+USAGE
+  $ mmerge generate
+
+OPTIONS
+  -f, --fileName=fileName  [default: template.js] the output filename
+  -h, --help               show CLI help
+```
+
+_See code: [src/commands/generate.ts](https://github.com/centre-for-effective-altruism/mandrill-mail-merge/blob/v0.2.0/src/commands/generate.ts)_
 
 ## `mmerge help [COMMAND]`
 
@@ -96,7 +112,7 @@ DESCRIPTION
       Note that CSV column headers will be converted to camelCase
 ```
 
-_See code: [src/commands/run.ts](https://github.com/centre-for-effective-altruism/mandrill-mail-merge/blob/v0.1.0/src/commands/run.ts)_
+_See code: [src/commands/run.ts](https://github.com/centre-for-effective-altruism/mandrill-mail-merge/blob/v0.2.0/src/commands/run.ts)_
 
 ## `mmerge setconfig`
 
@@ -110,5 +126,5 @@ OPTIONS
   -h, --help  show CLI help
 ```
 
-_See code: [src/commands/setconfig.ts](https://github.com/centre-for-effective-altruism/mandrill-mail-merge/blob/v0.1.0/src/commands/setconfig.ts)_
+_See code: [src/commands/setconfig.ts](https://github.com/centre-for-effective-altruism/mandrill-mail-merge/blob/v0.2.0/src/commands/setconfig.ts)_
 <!-- commandsstop -->
