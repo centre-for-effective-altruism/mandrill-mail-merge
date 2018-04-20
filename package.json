@@ -1,0 +1,73 @@
+{
+  "name": "mandrill-mail-merge",
+  "description": "Send a mail merge using your Mandrill account",
+  "version": "0.1.0",
+  "author": " @colophonemes",
+  "bin": {
+    "mmerge": "./bin/run"
+  },
+  "bugs": "https://github.com/centre-for-effective-altruism/mandrill-mail-merge/issues",
+  "dependencies": {
+    "@oclif/command": "1",
+    "@oclif/config": "1",
+    "@oclif/plugin-help": "1",
+    "@types/camelcase-keys": "^4.0.0",
+    "@types/csv-parse": "^1.1.11",
+    "@types/delay": "^2.0.1",
+    "@types/inquirer": "^0.0.41",
+    "@types/mandrill-api": "^1.0.30",
+    "@types/mz": "^0.0.32",
+    "camelcase-keys": "^4.2.0",
+    "csv-parse": "^2.2.0",
+    "delay": "^2.0.0",
+    "inquirer": "^5.2.0",
+    "mandrill-api": "^1.0.45",
+    "mz": "^2.7.0"
+  },
+  "devDependencies": {
+    "@oclif/dev-cli": "1",
+    "@oclif/test": "1",
+    "@oclif/tslint": "1",
+    "@types/chai": "4",
+    "@types/mocha": "5",
+    "@types/node": "9",
+    "chai": "4",
+    "globby": "8",
+    "mocha": "5",
+    "nyc": "11",
+    "ts-node": "5",
+    "tslib": "1",
+    "tslint": "5",
+    "typescript": "2.8"
+  },
+  "engines": {
+    "node": ">=8.0.0"
+  },
+  "files": [
+    ".oclif.manifest.json",
+    "/bin",
+    "/lib"
+  ],
+  "homepage": "https://github.com/centre-for-effective-altruism/mandrill-mail-merge",
+  "keywords": [
+    "oclif"
+  ],
+  "license": "MIT",
+  "main": "lib/index.js",
+  "oclif": {
+    "commands": "./lib/commands",
+    "bin": "mmerge",
+    "plugins": [
+      "@oclif/plugin-help"
+    ]
+  },
+  "repository": "centre-for-effective-altruism/mandrill-mail-merge",
+  "scripts": {
+    "postpack": "rm -f .oclif.manifest.json",
+    "posttest": "tsc -p test --noEmit && tslint -p test -t stylish",
+    "prepack": "rm -rf lib && tsc && oclif-dev manifest && oclif-dev readme",
+    "test": "nyc mocha --forbid-only \"test/**/*.test.ts\"",
+    "version": "oclif-dev readme && git add README.md"
+  },
+  "types": "lib/index.d.ts"
+}
