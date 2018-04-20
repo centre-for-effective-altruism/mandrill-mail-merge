@@ -25,4 +25,4 @@ function message (row) {
 `).trim()
 }
 
-module.exports = {from, fromName, to, toName, subject, message}
+module.exports = {fromEmail, fromName, to, toName, subject, message}
